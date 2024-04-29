@@ -1,0 +1,8 @@
+1-DOM : tree of any webpage.
+2-dark mode html : this is to get the "dark/light" feature. (not nessicary, but just so you know about it)
+3- crut = create, read, update, delete.
+4- ERD : entity relationship diagram.
+interview questions:
+1-difference between mutable and imutable.
+2-interpreter: line by line as the code runs.
+  compiler: all the code and before it runs
