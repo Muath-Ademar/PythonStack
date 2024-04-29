@@ -1,0 +1,43 @@
+1-pip list: this command lists installed packages, including editables.
+
+2-deactivate: this wil deactivate an active virtual environment.
+
+3-pip3 list: this pip operates only in a python3 environment.
+
+4-source myEnvironments/py3Env/bin/activate: this command is used to avctivate a virtual environment using git bash, to activate on windows you use call.
+
+5-pip install Django==2.2.4 :
+Collecting Django==2.2.4
+  Downloading Django-2.2.4-py3-none-any.whl.metadata (3.5 kB)
+Collecting pytz (from Django==2.2.4)
+  Downloading pytz-2024.1-py2.py3-none-any.whl.metadata (22 kB)
+Collecting sqlparse (from Django==2.2.4)
+  Downloading sqlparse-0.5.0-py3-none-any.whl.metadata (3.9 kB)
+Downloading Django-2.2.4-py3-none-any.whl (7.5 MB)
+   ---------------------------------------- 7.5/7.5 MB 4.6 MB/s eta 0:00:00
+Downloading pytz-2024.1-py2.py3-none-any.whl (505 kB)
+   ---------------------------------------- 505.5/505.5 kB 4.5 MB/s eta 0:00:00
+Downloading sqlparse-0.5.0-py3-none-any.whl (43 kB)
+   ---------------------------------------- 44.0/44.0 kB 2.1 MB/s eta 0:00:00
+Installing collected packages: pytz, sqlparse, Django
+
+6-pip freeze: pip list can filter and display packages by conditions like latest, outdated versions, and those not required by others. pip freeze is useful for creating requirements. txt , which is used for bulk installation of packages.
+
+7- pip freeze > requirements.txt: Django==2.2.4
+pytz==2024.1
+sqlparse==0.5.0
+
+8- pip uninstall django:Found existing installation: Django 2.2.4
+Uninstalling Django-2.2.4:
+  Would remove:
+    c:\users\moath\onedrive\desktop\axsos\python\python_fundementals\my_environments\py3env\lib\site-packages\django-2.2.4.dist-info\*
+    c:\users\moath\onedrive\desktop\axsos\python\python_fundementals\my_environments\py3env\lib\site-packages\django\*
+
+    c:\users\moath\onedrive\desktop\axsos\python\python_fundementals\my_environments\py3env\scripts\django-admin.exe
+    c:\users\moath\onedrive\desktop\axsos\python\python_fundementals\my_environments\py3env\scripts\django-admin.py
+Proceed (Y/n)? y
+  Successfully uninstalled Django-2.2.4
+
+9- pip show django:
+WARNING: Package(s) not found: django
+
