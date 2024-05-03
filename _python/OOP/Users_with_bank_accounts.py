@@ -46,6 +46,7 @@ mike = User("mike", "mike@gmail.com",0.03, 300)
 muath = User("muath", "muath@gmail.com",0.04, 400)
 Tony = User("Tony", "Tony@gmail.com", 0.05, 250)
 
+print(mike.account.balance)
 mike.makedeposit(200).makedeposit(200).makedeposit(200).makeWhithdrawal(100).displayUserbalance()
 muath.makedeposit(200).makedeposit(200).makeWhithdrawal(100).makeWhithdrawal(50).displayUserbalance()
 Tony.makedeposit(1000).makeWhithdrawal(200).makeWhithdrawal(200).makeWhithdrawal(200).displayUserbalance()
