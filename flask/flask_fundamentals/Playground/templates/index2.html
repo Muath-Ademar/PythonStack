@@ -16,20 +16,28 @@
             margin: 0 auto;
         }
         .square{
+           width: 200px;
+           height: 200px;
+            background-color: ;
+        }
+        .All_boxes{
             display: flex;
-            justify-content: space-between;
-            width: 100%;
+            justify-content: center;
             flex-wrap: wrap;
         }
     </style>
 </head>
 <body style="display: flex; flex-direction: column; align-items: center;">
     <h1>Welcome!</h1>
-    <div class="square">
+    <div class="All_boxes">
         {% for x in range(0,times): %}
-        <h2></h2>
+        <div class="square" style="background-color: {{color}}";>
+            <h2></h2>
+        </div>
         {% endfor %}
         
     </div>
+
+    
 </body>
 </html>
