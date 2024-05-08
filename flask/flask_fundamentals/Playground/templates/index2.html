@@ -18,7 +18,7 @@
         .square{
         width: 200px;
         height: 200px;
-        background-color: {{color}};
+        
         }
         .All_boxes{
             display: flex;
@@ -31,7 +31,7 @@
     <h1>Welcome!</h1>
     <div class="All_boxes">
         {% for x in range(0,times): %}
-        <div class="square">
+        <div class="square" style="background-color: {{color}}">
             <h2></h2>
         </div>
         {% endfor %}
