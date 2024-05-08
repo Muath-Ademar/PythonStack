@@ -1,0 +1,17 @@
+.main{
+text-align: center;
+    display: block;
+}
+.text{
+    border: 2px solid black;
+    width: 200px;
+    font-size: 17px;
+    margin-top: 50px;
+    margin-left: 580px;
+}
+
+.time{
+    border: 2px solid black;
+    width: 400px;
+    margin: 0 auto;
+}
