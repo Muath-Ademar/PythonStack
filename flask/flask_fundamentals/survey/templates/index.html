@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="Main">
+        <form action='/result' method='post'>
+            <div class="Name">
+                <label for="your name"> Your Name:</label>
+                <input class="YouNameLable" type="text" name="username">
+            </div>
+            <div class="location">
+                <label for="Dojo Location"> Dojo Location:</label>
+                <select class="selectLoc" name="location" id="location">
+                    <option value="Palestine">Palestine</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="Eygpt">Eygpt</option>
+                </select>
+            </div>
+            <div class="language">
+                <label for="your name"> Favorite Language:</label>
+                <select class="selectLan" name="language" id="language">
+                <option  value="Python">Python</option>
+                <option value="C#">C#</option>
+                <option value="Java">Java</option>
+                </select>
+            </div>
+            <div class="comment">
+                <label for="your name"> Comment (Optional):</label><br>
+                <textarea class="CommentSection" name="comment" id="Comment"></textarea>
+                
+            </div>
+
+
+            <div class="tailSec">
+            <div class="Radio">
+                <label for="">Yes</label>
+                <input type="radio" value="Yes" name="Op" required>
+                <label for="">No</label>
+                <input type="radio" value="No" name="Op" required>
+            </div>
+            <div class="chSec">
+            <div class="Muath">
+                <label for="">Muath</label>
+                <input type="checkbox" value="Muath" name="check[]">
+            </div>
+            <div class="Ola">
+                <label for="">Ola</label>
+                <input type="checkbox" value="Ola" name="check[]">
+            </div>
+            </div>
+            <button class="ButtonSec">Button</button>
+    </div>
+</div>
+</form>
+</body>
+</html>

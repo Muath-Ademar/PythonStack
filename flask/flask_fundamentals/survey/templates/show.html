@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<body>
+    <div class="Main">
+    <form action='/login' method='post'>
+    <h1>Submitted info</h1>
+    <div class="namee">
+        <label> Name:</label>
+        <p>{{name}}</p>    
+    </div>
+    <div class="locationn">
+        <label> Dojo Location :</label>
+        <p >{{location}}</p>
+    </div>
+    <div class="languagee">
+        <label> Favorite Language :</label>
+        <p >{{language}}</p>
+    </div>
+    <div class="commentt">
+        <label> Comment :</label>
+        <p >{{comment}}</p>
+    </div>
+
+<div class="tail">
+    
+    <div class="Bouns">
+    <div class="yes_no">
+        <h1>{{opt}}</h1>
+    </div>
+    <div class="check">
+        
+        <h1>{{ch}}</h1>
+        
+    </div>
+    
+</div>
+<button  class="ButtonSec" value="survey1">Go Back</button>
+</div>
+    </form>
+</div>
+</body>
+</html>
