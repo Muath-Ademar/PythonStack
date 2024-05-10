@@ -11,10 +11,10 @@
 
     }
     .red{
-    background-color: red;
+    background-color: {{color1}};
     }
     .black{
-    background-color: black;
+    background-color: {{color2}};
     }
     </style>
 </head>
@@ -22,24 +22,16 @@
 <table>
     {% for i in range(num): %}
         <tr>
+            {% for x in range(num2): %}
             <td class="red"></td>
             <td class="black"></td>
-            <td class="red"></td>
-            <td class="black"></td>
-            <td class="red"></td>
-            <td class="black"></td>
-            <td class="red"></td>
-            <td class="black"></td>
+            {% endfor %}
         </tr>
         <tr>
+            {% for x in range(num2): %}
             <td class="black"></td>
             <td class="red"></td>
-            <td class="black"></td>
-            <td class="red"></td>
-            <td class="black"></td>
-            <td class="red"></td>
-            <td class="black"></td>
-            <td class="red"></td>
+            {% endfor %}
         </tr>
         {% endfor %} 
 </table>
