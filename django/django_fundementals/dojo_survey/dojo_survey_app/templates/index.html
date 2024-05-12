@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet"> -->
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <h1>A Form</h1>
+
+        <form  class="formm" action='/result' method='post'>        
+
+            {% csrf_token %}
+
+            <p>Your Name: <input class="name" type='text' name='username'></p>
+
+            <label for="locations">Dojo Location:</label>
+            <select name="locations" id="locations">
+                <option value="jose">San Jose</option>
+                <option value="francisco">San francisco</option>
+                <option value="angeles">Los Angeles</option>
+            </select><br><br>
+
+            <label for="languages">Favorite Language:</label>
+            <select name="languages" id="languages">
+                <option value="python">Python</option>
+                <option value="c++">C++</option>
+                <option value="javascript">JavaScript</option>
+            </select><br><br>
+
+            <div>
+                <label class="box" for="comments">Comments (optional):</label>
+                <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+            </div>
+            
+            <div class="btn">
+                <input class="btn-style" type="submit" value="Submit">
+            </div>         
+        </form>
+    </div>
+
+</body>
+</html>
+
+  
+</form>
