@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        background-color: {{request.session.color}};
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<body>
+        <h1>welcome</h1>
+        <h2>guess the number between 1 and 100</h2>
+        <div class="box">{{request.session.text}}</div>
+        <form action="/action" method="post">
+            {% csrf_token %}
+            <input type="number" min=1 max=100 name="number">
+            <button>submit</button>
+        </form>
+</body>
+
+</html>

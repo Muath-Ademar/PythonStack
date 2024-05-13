@@ -1,0 +1,26 @@
+*{
+    text-align: center;
+}
+
+.red{ 
+    border: 2px solid black;
+    width: 300px;
+    height: 90px;
+    margin: 0 auto;
+    padding-top: 60px;
+    color: white;
+    background-color: #cf2a27;
+}
+button {
+    margin-top: 10px;
+}
+
+.green{
+    border: 2px solid black;
+    width: 300px;
+    height: 90px;
+    margin: 0 auto;
+    padding-top: 60px;
+    color: white;
+    background-color: hsl(125.7deg 100% 30.98%)
+}
