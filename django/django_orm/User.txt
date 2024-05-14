@@ -1,0 +1,29 @@
+manage.py makemigrations 
+_______________________
+python manage.py makemigrations
+_______________________
+python manage.py shell
+_______________________
+from users_app.models import *
+_______________________
+Users.objects.create(first_name="Muath", last_name="Ademar", email_address="muath@gmail.com", age="22") 
+Users.objects.create(first_name="Raghad", last_name="AbuRahma", email_address="raghad@gmail.com", age="23")
+Users.objects.create(first_name="saed", last_name="saed", email_address="saied@gmail.com", age="30") 
+__________________________
+Users.objects.all().values()
+_________________________
+ Users.objects.last().__dict__
+_________________________
+Users.objects.first().__dict__
+_________________________
+
+user_to_update = Users.objects.get(id=3)
+user_to_update.last_name =" Pancakes"
+user_to_update.save()
+_________________________
+user_to_delete = Users.objects.get(id=2)
+user_to_delete.delete()
+_________________________
+Users.objects.all().order_by("first_name").values()
+_________________________
+Users.objects.all().order_by("-first_name").values()
