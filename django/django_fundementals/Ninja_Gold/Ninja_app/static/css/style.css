@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+.box{
+    border: 2px solid black;
+    height: 200px;
+    width: 200px;
+    margin-top: 30px;
+    text-align: center;
+}
+.M{
+    list-style-type: none;
+    color: green;
+}
+.R{
+color: red;
+list-style-type :none ;
+}
+.Activities{
+    border: 2px solid black;
+    margin-left: 70px;
+    padding-left: 20px;
+    overflow-y: auto;
+    max-height: 200px;
+    margin-right: 70px;
+}
+.act {
+    margin-left: 60px;
+}
+.Gold{
+    margin-left: 60px;
+}
