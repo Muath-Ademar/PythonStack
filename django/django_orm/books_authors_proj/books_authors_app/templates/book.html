@@ -27,6 +27,7 @@
                 {% csrf_token %}
                 <p>title</p><input type='text' name='title'>
                 <p>Description</p> <textarea name="desc" id=""></textarea><br>
+                <input type="hidden" name="author_id">
                 <button >Add Book</button>
             </form>
         </div>
@@ -45,7 +46,7 @@
             <tr>
                 <td>{{ book.id }}</td>
                 <td>{{ book.title }}</td>
-                <td><a href="title/int:num">View</a></td>
+                <td><a href="books/id">View</a></td>
             </tr>
         {% endfor %}
             </tbody>    

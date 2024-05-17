@@ -15,16 +15,23 @@ def show_books(request):
         )
     return redirect('/')
 def authors(request):
-    authors = {
+    context = {
         "All_the_authors":
         Author.objects.all()
     }
-    return render (request, "Authors.html", authors)
+    return render (request, "Authors.html", context)
 def show_author(request):
     if request.method == 'POST':
         add_author = Author.objects.create(
-            first_name =  request .POST['first']
-            last_name = request.POST['last']
-            books = request.POST['']
-            notes = request.POST['notes']
+            first_name =  request.POST['first'],
+            last_name = request.POST['last'],
+            notes = request.POST['notes'],
         )
+    return redirect('/authors')
+def View_Book(request):
+    Books = {
+        "All_the_Books":
+        Book.objects.all()
+    }
+    return render(request, 'show_books.html', Books )
+
