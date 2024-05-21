@@ -28,11 +28,36 @@ def show_author(request):
             notes = request.POST['notes'],
         )
     return redirect('/authors')
-def View_Book(request):
+def View_Book(request, id):
     Books = {
-        "All_the_Books":
-        Book.objects.all()
+        "Authors":Author.objects.all(),
+        "book" : Book.objects.get(id = id)
     }
-book = 
-    return render(request, 'show_books.html', Books )
 
+    return render(request, 'show_books.html', Books )
+def display_authors(request, id):
+    book = Book.objects.get(id = id)
+    ex_author = Book.objects.exclude( id__in=author.books.values('id'))
+    author = {
+        "ex_author": ex_author,
+        'Book': Book.objects.get(id = id),
+    }
+    authors = Author.objects.get(id=id)
+    book.authors.add(authors)
+    return redirect('book', id = id)
+
+def View_author(request, id):
+        author = {
+        "books":Book.objects.all(),
+        "author" : Author.objects.get(id = id)
+    }
+        return render(request, 'show_authors.html', author)
+    
+    
+
+        # author = Author.objects.get(id = id)
+    # ex_book = Book.objects.exclude( id__in=author.books.values('id'))
+    # author = {
+    #     "ex_book": ex_book,
+    #     'Author': Author.objects.get(id = id),
+    # }

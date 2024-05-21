@@ -6,14 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    {% for book in All_the_Books %}
+    
         <h1>{{book.title}}</h1>
         <p> ID: {{book.id}}</p>
         <p> Description: {{book.desc}}</p>
+        <h1>Authors</h1>
+    {% for author in book.authors.all%}
+        <p>{{author.first_name}} {{author.last_name}}</p>
     {% endfor %}
-    <h1>Authors</h1>
-    <p></p>
-    <p></p>
+        <form action="display_authors">
+            <select name="select" id="">
+            <option value="">Select</option>
+            {% for author in Authors  %}
+                <option value="{{author.first_name}}">{{author.first_name}} </option>
+            {% endfor %}
+        </select>
+        <button>Add Author</button>
+
+        </form>
+        
+
 </body>
 </html>
 
@@ -32,22 +44,3 @@
 
 
 
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Author</h1>
-    <p>ID: 4</p>
-    <p>Notes:</p>
-    <h1>Books</h1>
-    <p></p>
-    <p></p>
-</body>
-</html> -->

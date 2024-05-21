@@ -7,10 +7,22 @@
 </head>
 <body>
     <h1>Author</h1>
-    <p>ID: 4</p>
-    <p>Notes:</p>
+    <p>{{author.first_name}} {{author.last_name}}</p>
+    <p>ID: {{author.id}}</p>
+    <p>Notes: {{author.notes}}</p>
     <h1>Books</h1>
-    <p></p>
-    <p></p>
+    {% for book in author.books.all %}
+        <p>{{book.title}}</p>
+    {% endfor %}
+    
+    <select name="select" id="">
+        <option value="">Select</option>
+        {% for book in books %}
+            <option value="book.title">{{book.title}}</option>
+        {% endfor %}
+
+    </select>
+
+    
 </body>
 </html>
