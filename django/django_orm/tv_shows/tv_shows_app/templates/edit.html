@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1 class="show"> Edit show </h1>
+
+    <form  class="form1" action="/shows" method="post">
+        <div>
+            <p>Title</p>
+            <input type="text" name="title">
+        </div>
+        <div >
+            <span>Network </span>    
+            <input type="text" name="network" col=> 
+            <span>Release Date</span>
+            <input type="date">
+        </div>
+        <div>
+            <p>Description</p>
+            <textarea name="desc" id="" cols="30" rows="5"></textarea>
+        </div>
+        <button>Update</button>
+    
+    </form>
+</body>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+.container{
+    display: flex;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <form action="/Register" method="post">
+            {% csrf_token %}
+            
+
+            
+            <h1>Register</h1>
+            <div class="first">
+                <label for="">First name</label>
+                <input type="text" name="first" >
+            </div>
+            <div class="last">
+                <label for="">Last name</label>
+                <input type="text" name="last" >
+            </div>
+            <div class="email">
+                <label for="">Email Address</label>
+                <input type="email" name="email" >
+            </div>
+            <div class="password">
+                <label for="">Password</label>
+                <input type="password" name="password" >
+            </div>
+            <div class="conform">
+                <label for="">Conform Password</label>
+                <input type="password" name="conform" >
+            </div>
+            <button>Register</button>
+        </form>
+        {% if messages %}
+            <ul class="messages">    
+                {% for message in messages %}    
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                {% endfor %}
+            </ul>
+            {% endif %}
+        <form action="Login" method="POST">
+            {% csrf_token %}
+            <h1>Login</h1>
+            <input type="hidden" name="first">
+            <input type="hidden" name="last">
+            <div class="Email">
+                <label for="">Email</label>
+                <input type="email" name="loginemail" >
+            </div>
+            <div class="Password">
+                <label for="">Password</label>
+                <input type="password" name="loginpassword" >
+                <input type="hidden" name="conform" id="">
+            </div>
+            <button>Login</button>
+        </form>
+    </div>
+    
+</body>
+</html>

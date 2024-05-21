@@ -33,5 +33,6 @@ def View_Book(request):
         "All_the_Books":
         Book.objects.all()
     }
+book = 
     return render(request, 'show_books.html', Books )
 
