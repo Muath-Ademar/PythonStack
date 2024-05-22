@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1 class="show"> Edit show </h1>
+    {% for message in messages %}
+    <p style="color:red ;">{{message}}</p>
+    {%endfor%}
+
+    <form  class="form1" action="/info/{{show.id}}/edit" method="post">
+        {% csrf_token %}
+        <div>
+            <p>Title</p>
+            <input type="text" name="title" value="{{show.title}}">
+        </div>
+        <div >
+            <span>Network </span>    
+            <input type="text" name="network" value="{{show.network}}">
+            <span>Release Date</span>
+            <input type="date" name="date" value="{{show.release_date}}">
+        </div>
+        <div>
+            <p>Description</p>
+            <textarea name="desc" id="" cols="30" rows="5" value="{{show.Description}}"></textarea>
+        </div>
+        <button>Update</button>
+    
+    </form>
+    {% if messages %}
+    <ul class="messages">    
+    {% for message in messages %}    
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+    {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</body>
+</html>
