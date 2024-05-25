@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+        <div class="nav-details">
+                <h1>Welcome, {{user.first_name}} {{user.Last_name}}</h1>
+                <a class="logout" href="/logout">Log Out</a> 
+        </div>
+    <div class="container_detailes">
+        
+    
+    {% if book.uploaded_by.id == request.session.user_id %}
+    <div>
+        <form action="/books/{{ book.id }}/edit" method="post">
+            {% csrf_token %}
+            <input type="text" name="title" value="{{ book.title }}">
+            <p>Added By: {{book.uploaded_by.first_name}} {{book.uploaded_by.Last_name}}</p>
+            <p>Added on: {{book.created_at}}</p>
+            <p>Last updated on: {{book.updated_at}}</p>
+            <p>Description: </p>
+            <textarea name="desc" id="desc">{{book.desc}}</textarea>
+            
+            
+        </form>
+        <div>
+            <button class="update">updated</button>
+            <ul class="messages">    
+                {% for message in messages %}    
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                {% endfor %}
+            </ul>
+            <form action="/books/{{ book.id }}/delete" method="post">
+                {% csrf_token %}
+                <button type="submit" class="del">Delete</button>
+            </form>
+        </div>
+
+    </div>
+    {% elif book.uploaded_by.id != request.session.user_id%}
+            <p>Added By: {{book.uploaded_by.first_name}} {{book.uploaded_by.Last_name}}</p>
+            <p>Added on: {{book.created_at}}</p>
+            <p>Description: {{book.desc}}</p>
+    {% endif %}
+    <h1>Users who like this book:</h1>
+    <ul>
+        {% for user in book.users.all %}
+            <li>{{user.first_name}} {{user.Last_name}}</li>
+        {% endfor %}
+        {% if book.uploaded_by.id != user.id and user not in book.users.all %}
+                    <a href="/books/{{book.id}}/favorite"> Favorite</a>
+        {% elif user in book.users.all %}
+                    <a href="/books/{{book.id}}/unfavorite"> Un-Favorite</a>
+        {% endif %}
+        
+    </ul>
+
+    </div>
+    
+    
+</body>
+</html>
