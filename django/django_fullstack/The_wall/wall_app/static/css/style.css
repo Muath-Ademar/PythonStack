@@ -1,0 +1,20 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black ;
+}
+.name{
+    display: flex;
+    align-items: center;
+}
+.name h1{
+    margin-right: 60px ;
+}
+.message{
+    margin-left: 20px;
+}
+.messages{
+    margin-top: 50px;
+    margin-left: 300px;
+}
